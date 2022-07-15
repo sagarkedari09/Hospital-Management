@@ -1,0 +1,13 @@
+.container{
+          height: 100vh;
+          display: grid;
+          grid-template-columns: 0.7fr 3.3fr          ;
+
+          .left-navbar{
+                    display: grid;
+                    justify-content: center;
+                    border-right: thin solid black;
+                    padding-top: 1em;
+          }
+
+}

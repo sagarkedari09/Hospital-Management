@@ -1,0 +1,38 @@
+<main class="main-container">
+          <section class="hospital-picture">
+            <img
+              src="../assets/hospital-wallpaper.webp"
+              alt="*hospital wallpaper"
+              class="hospital-wallpaper"
+            />
+          </section>
+          <section class="login-section">
+            <h2>Login</h2>
+            <form
+              [formGroup]="loginForm"
+              (ngSubmit)="onSubmit(loginForm)"
+              class="login-form"
+            >
+              <app-input
+                type="text"
+                placeholder="enter your email"
+                formControlName="email"
+              ></app-input>
+              <span *ngIf="loginForm.get('email')!.hasError('email')" class="message"
+                >*invalid email</span
+              >
+              <app-input
+                formControlName="password"
+                type="password"
+                placeholder="enter your password"
+              ></app-input>
+              <span
+                *ngIf="loginForm.get('password')!.hasError('minlength')"
+                class="message"
+                >*password is too short</span
+              >
+              <app-btn [loginForm]="loginForm">Login</app-btn>
+            </form>
+          </section>
+</main>             
+        
